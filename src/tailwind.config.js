@@ -12,7 +12,6 @@ module.exports = {
     },
     colors: {
       transparent: 'transparent',
-
       black: '#000',
       white: '#fff',
 
@@ -209,8 +208,8 @@ module.exports = {
       "2xl": '1rem',
       "3xl": '1.5rem',
       "4xl": '2.5rem',
-      "5xl":'3rem',
-      "6xl":'4.5rem',
+      "5xl": '3rem',
+      "6xl": '4.5rem',
       full: '9999px',
     },
     borderWidth: {

@@ -11,7 +11,7 @@ import Header from "components/headers/light.js";
 import "react-phone-number-input/style.css";
 import "react-step-progress-bar/styles.css";
 import { ProgressBar, Step } from "react-step-progress-bar";
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 const Container = tw(
   ContainerBase
@@ -44,9 +44,9 @@ const SocialButton = styled.a`
 
 const DividerTextContainer = tw.div`my-12 border-b text-center relative`;
 const DividerText = tw.div`leading-none px-2 inline-block text-sm text-gray-600 tracking-wide font-medium bg-white transform -translate-y-1/2 absolute inset-x-0 top-1/2 bg-transparent`;
-const PhoneInputCSS = 
+const PhoneInputCSS =
   css
-  `w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5 first:mt-0`;
+    `w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5 first:mt-0`;
 const Form = tw.form`mx-auto max-w-xs`;
 const Input = tw.input`w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5 first:mt-0`;
 const Select = tw.select`w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5 first:mt-0`;
@@ -82,7 +82,7 @@ class SignUpForm extends React.Component {
 
     this.handleAccountTypeChange = this.handleAccountTypeChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    
+
   }
   handleAccountTypeChange(event) {
     this.setState({ accountTypeValue: event.target.value });
@@ -101,9 +101,9 @@ class SignUpForm extends React.Component {
   }
 
   handlePhoneNumberChange(event) {
-    console.log("Phone number changed to : "+event);
+    console.log("Phone number changed to : " + event);
   }
-  
+
   render() {
     return (
       <AnimationRevealPage disabled>
@@ -145,7 +145,7 @@ class SignUpForm extends React.Component {
                   </label>
                   <Input type="email" placeholder="Email" />
                   {/* <Input type="password" placeholder="Password" /> */}
-                  
+
                   {/* <PhoneInput
                   addInternationalOption = "true"
                   defaultCountry = "US"
@@ -153,10 +153,10 @@ class SignUpForm extends React.Component {
                     value={this.state.phoneNumberValue}
                     onChange={this.handlePhoneNumberChange}
                   /> */}
-                  <SubmitButton type="submit"  href="/verify-phone">
+                  <SubmitButton type="submit" href="/verify-phone">
                     <SubmitButtonIcon className="icon" />
                     <span className="text">{submitButtonText}</span>
-                  </SubmitButton> 
+                  </SubmitButton>
                   <p tw="mt-6 text-xs text-gray-600 text-center">
                     I agree to abide by app's{" "}
                     <a
@@ -193,39 +193,39 @@ class SignUpForm extends React.Component {
         </Content>
         {/* </Container> */}
         <ProgressBar
-        percent={0}
-        filledBackground="linear-gradient(to right, #fefb72, #f0bb31)"
-      >
-        <Step transition="scale">
-          {({ accomplished }) => (
-            <img
-              style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
-              width="30"
-              src={StepImage}
-            />
-          )}
-        </Step>
-        <Step transition="scale">
-          {({ accomplished }) => (
-            <img
-              style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
-              width="30"
-              src={StepImage}
+          percent={0}
+          filledBackground="linear-gradient(to right, #fefb72, #f0bb31)"
+        >
+          <Step transition="scale">
+            {({ accomplished }) => (
+              <img
+                style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
+                width="30"
+                src={StepImage}
+              />
+            )}
+          </Step>
+          <Step transition="scale">
+            {({ accomplished }) => (
+              <img
+                style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
+                width="30"
+                src={StepImage}
               //src="https://vignette.wikia.nocookie.net/pkmnshuffle/images/9/97/Pikachu_%28Smiling%29.png/revision/latest?cb=20170410234508"
-            />
-          )}
-        </Step>
-        <Step transition="scale">
-          {({ accomplished }) => (
-            <img
-              style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
-              width="30"
-              src={StepImage}
+              />
+            )}
+          </Step>
+          <Step transition="scale">
+            {({ accomplished }) => (
+              <img
+                style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
+                width="30"
+                src={StepImage}
               //src="https://orig00.deviantart.net/493a/f/2017/095/5/4/raichu_icon_by_pokemonshuffle_icons-db4ryym.png"
-            />
-          )}
-        </Step>
-      </ProgressBar>
+              />
+            )}
+          </Step>
+        </ProgressBar>
       </AnimationRevealPage>
     );
   }

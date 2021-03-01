@@ -15,8 +15,11 @@ import logoImageSrc from "images/chef-icon.svg";
 //import serverIllustrationImageSrc from "images/server-illustration-2.svg";
 import styled from "styled-components";
 import ReactPlayer from "react-player";
+
+import { Link } from 'react-scroll'
+// const ScrollLink = Scroll.ScrollLink
 //import Login from "../../login.js"
-const gradientCss = 
+const gradientCss =
   css`
     background: linear-gradient(to bottom, rgba(101, 219, 168, 1), rgba(0, 148, 68, 1), rgba(0, 148, 68, 0));
   `;
@@ -51,9 +54,32 @@ export default ({
   );
   const navLinks = [
     <NavLinks key={1}>
-      <NavLink href="#">United States</NavLink>
-      <NavLink href="#">Features</NavLink>
-      <NavLink href="#">Pricing</NavLink>
+      <NavLink href="#">
+        <Link
+          to="features"
+          smooth={true}
+          duration={500}
+        >
+          United States
+        </Link>
+      </NavLink>
+      <NavLink href="#">
+        <Link
+          to="features"
+          smooth={true}
+          duration={500}
+        >Features
+        </Link>
+      </NavLink>
+      <NavLink href="#">
+        <Link
+          to="pricing"
+          smooth={true}
+          duration={500}
+        >
+          Pricing
+        </Link>
+      </NavLink>
       <NavLink href="#">Contact Us</NavLink>
       <NavLink href="/login">Login</NavLink>
       <PrimaryLink href="#">Signup</PrimaryLink>
@@ -69,7 +95,7 @@ export default ({
   }
 `;
   return (
-    <PrimaryBackgroundContainer css = {gradientCss}>
+    <PrimaryBackgroundContainer css={gradientCss}>
       <Content2Xl>
         <Header logoLink={logoLink} links={navLinks} />
         <Container>
@@ -78,15 +104,15 @@ export default ({
               <TextColumn>
                 <Heading>{heading}</Heading>
                 <Description>{description}</Description>
-                <br/><br/>
+                <br /><br />
                 <Actions>
-              <input type="text" placeholder="Your E-mail Address" />
-              <button>Get Started</button>
-            </Actions>
+                  <input type="text" placeholder="Your E-mail Address" />
+                  <button>Get Started</button>
+                </Actions>
               </TextColumn>
-              <ReactPlayer controls="true" 
-        url="https://www.youtube.com/watch?v=ug50zmP9I7s"
-      />
+              <ReactPlayer controls="true"
+                url="https://www.youtube.com/watch?v=ug50zmP9I7s"
+              />
               {/* <IllustrationColumn>
               <ReactPlayer   controls="true" 
         url="https://www.youtube.com/watch?v=ug50zmP9I7s"

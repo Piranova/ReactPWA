@@ -7,16 +7,21 @@ import Pricing from "components/pricing/TwoPlansWithDurationSwitcher";
 import FAQ from "components/faqs/SingleCol.js";
 import Footer from "components/footers/MiniCenteredFooter.js";
 
+import { Element } from "react-scroll";
 const Home = () => {
-    return (
-        <AnimationRevealPage disabled>
+  return (
+    <AnimationRevealPage disabled>
       <Hero />
-      <HowItWorks/>
-      <Features />
-      <Pricing/>
-      <Pricing/>
-      <FAQ/>
-      <Footer/>
+      <HowItWorks />
+      <Element name="features">
+        <Features />
+      </Element>
+      <Element name="pricing">
+        <Pricing />
+      </Element>
+      <Pricing />
+      <FAQ />
+      <Footer />
     </AnimationRevealPage>)
 };
 export default Home;

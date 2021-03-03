@@ -1,54 +1,23 @@
 import React from "react";
 import AnimationRevealPage from "helpers/AnimationRevealPage.js";
-import { Container as ContainerBase } from "components/misc/Layouts";
 import tw from "twin.macro";
 import styled from "styled-components";
-import { css } from "styled-components/macro"; //eslint-disable-line
 import illustration from "images/signup-illustration.svg";
 import StepImage from "images/step-image.svg";
-//import VerifyImage from "images/verify.svg";
-//import ResendImage from "images/resend.svg";
-//import { ReactComponent as SignUpIcon } from "feather-icons/dist/icons/user-plus.svg";
 import { ReactComponent as ResendImage } from "images/resend.svg";
 import { ReactComponent as VerifyImage } from "images/verify.svg";
 import Header from "components/headers/light.js";
 import "react-phone-number-input/style.css";
-import PhoneInput from "react-phone-number-input";
 import "react-step-progress-bar/styles.css";
 import { ProgressBar, Step } from "react-step-progress-bar";
-const Container = tw(
-  ContainerBase
-)`min-h-screen bg-primary-900 text-white font-medium flex justify-center -m-8`;
+
 const Content = tw.div`max-w-screen-xl m-0 sm:mx-20 sm:my-16 bg-white text-gray-900 shadow sm:rounded-lg flex justify-center flex-1`;
 const MainContainer = tw.div`lg:w-1/2 xl:w-5/12 p-6 sm:p-12`;
-const LogoLink = tw.a``;
-const LogoImage = tw.img`h-12 mx-auto`;
 const MainContent = tw.div`mt-12 flex flex-col items-center`;
 const Heading = tw.h1`text-2xl xl:text-3xl font-extrabold`;
 const FormContainer = tw.div`w-full flex-1 mt-8`;
-
-const SocialButtonsContainer = tw.div`flex flex-col items-center`;
-const SocialButton = styled.a`
-  ${tw`w-full max-w-xs font-semibold rounded-lg py-3 border text-gray-900 bg-gray-100 hocus:bg-gray-200 hocus:border-gray-400 flex items-center justify-center transition-all duration-300 focus:outline-none focus:shadow-outline text-sm mt-5 first:mt-0`}
-  .iconContainer {
-    ${tw`bg-white p-2 rounded-full`}
-  }
-  .icon {
-    ${tw`w-4`}
-  }
-  .text {
-    ${tw`ml-4`}
-  }
-`;
-
-const DividerTextContainer = tw.div`my-12 border-b text-center relative`;
-const DividerText = tw.div`leading-none px-2 inline-block text-sm text-gray-600 tracking-wide font-medium bg-white transform -translate-y-1/2 absolute inset-x-0 top-1/2 bg-transparent`;
-const PhoneInputCSS = 
-  css
-  `w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5 first:mt-0`;
 const Form = tw.form`mx-auto max-w-xs`;
 const Input = tw.input`w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5 first:mt-0`;
-const Select = tw.select`w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5 first:mt-0`;
 const NavLink = tw.a`
   text-lg my-2 lg:text-sm lg:mx-6 lg:my-0
   font-semibold tracking-wide transition duration-300
@@ -75,7 +44,6 @@ const ResendButtonIcon = ResendImage;
 const tosUrl = "#";
 const privacyPolicyUrl = "#";
 const signInUrl = "/login";
-const logoLinkUrl = "#";
 const illustrationImageSrc = illustration;
 const headingText = "Verify Phone number";
 
@@ -167,6 +135,7 @@ class VerifyPhone extends React.Component {
               style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
               width="30"
               src={StepImage}
+              alt=""
             />
           )}
         </Step>
@@ -176,7 +145,7 @@ class VerifyPhone extends React.Component {
               style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
               width="30"
               src={StepImage}
-              //src="https://vignette.wikia.nocookie.net/pkmnshuffle/images/9/97/Pikachu_%28Smiling%29.png/revision/latest?cb=20170410234508"
+              alt=""
             />
           )}
         </Step>
@@ -186,7 +155,7 @@ class VerifyPhone extends React.Component {
               style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
               width="30"
               src={StepImage}
-              //src="https://orig00.deviantart.net/493a/f/2017/095/5/4/raichu_icon_by_pokemonshuffle_icons-db4ryym.png"
+              alt=""
             />
           )}
         </Step>

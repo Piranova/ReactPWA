@@ -43,6 +43,7 @@ export const LogoLink = styled(NavLink)`
 `;
 
 export const MobileNavLinksContainer = tw.nav`flex flex-1 items-center justify-between`;
+
 export const NavToggle = tw.button`
   lg:hidden z-20 focus:outline-none hocus:text-primary-500 transition duration-300
 `;
@@ -75,7 +76,7 @@ export default ({ roundedHeaderButton = false, logoLink, links, className, colla
   const defaultLinks = [
 
     <NavLinks key={1}>
-      <NavLink href="#states">United States</NavLink>
+      <NavLink href="#">United States</NavLink>
       <NavLink href="#">Features</NavLink>
       <NavLink href="#">Pricing</NavLink>
       <NavLink href="#">Contact Us</NavLink>

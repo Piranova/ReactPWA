@@ -1,14 +1,12 @@
 import React from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
-import {Container as ContainerBase } from "components/misc/Layouts.js"
 import logoImageSrc from "images/chef-icon.svg";
 import { ReactComponent as FacebookIcon } from "../../images/facebook-icon.svg";
 import { ReactComponent as TwitterIcon } from "../../images/twitter-icon.svg";
 import { ReactComponent as YoutubeIcon } from "../../images/youtube-icon.svg";
 import { css } from "styled-components/macro"; //eslint-disable-line
 
-const Container = tw(ContainerBase)`bg-gray-900 text-gray-100 -mx-8 -mb-8`
 const Content = tw.div`max-w-screen-xl mx-auto py-20 lg:py-24`;
 
 const Row = tw.div`flex items-center justify-center flex-col px-8`
@@ -30,20 +28,19 @@ const SocialLink = styled.a`
 const PrimaryBackgroundContainer = tw.div`-mx-8 px-8 text-gray-100`;
 const CopyrightText = tw.p`text-center mt-10 font-medium tracking-wide text-sm text-gray-600`
 export default () => {
-  const gradientCss = 
-  css`
+  const gradientCss =
+    css`
     background: linear-gradient(to bottom, rgba(0, 148, 68, 1), rgba(101, 219, 168, 1), rgba(101, 219, 168, 0));
   `;
   return (
-    <PrimaryBackgroundContainer css = {gradientCss}>
-    {/* <Container> */}
+    <PrimaryBackgroundContainer css={gradientCss}>
       <Content>
         <Row>
           <LogoContainer>
             <LogoImg src={logoImageSrc} />
             <LogoText>APP NAME</LogoText>
           </LogoContainer>
-           <LinksContainer>
+          <LinksContainer>
             <Link href="#">United States</Link>
             <Link href="#">Features</Link>
             <Link href="#">Pricing</Link>
@@ -66,7 +63,7 @@ export default () => {
           </CopyrightText>
         </Row>
       </Content>
-    {/* </Container> */}
+      {/* </Container> */}
     </PrimaryBackgroundContainer>
   );
 };

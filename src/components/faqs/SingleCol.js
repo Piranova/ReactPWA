@@ -70,63 +70,63 @@ export default ({
     if (activeQuestionIndex === questionIndex) setActiveQuestionIndex(null);
     else setActiveQuestionIndex(questionIndex);
   };
-  
-  const gradientCss = 
-  css`
+
+  const gradientCss =
+    css`
     background: linear-gradient(to bottom,rgba(101, 219, 168, 0), rgba(101, 219, 168, 1), rgba(0, 148, 68, 1));
   `;
   return (
-    <PrimaryBackgroundContainer css = {gradientCss}>
-    <Container>
-      <ContentWithPaddingXl>
-        <Column>
-          <HeaderContent>
-            {subheading && <Subheading>{subheading}</Subheading>}
-            <Heading>{heading}</Heading>
-            {description && <Description>{description}</Description>}
-          </HeaderContent>
-          <FAQSContainer>
-            {faqs.map((faq, index) => (
-              <FAQ
-                key={index}
-                onClick={() => {
-                  toggleQuestion(index);
-                }}
-                className="group"
-              >
-                <Question>
-                  <QuestionText>{faq.question}</QuestionText>
-                  <QuestionToggleIcon
+    <PrimaryBackgroundContainer css={gradientCss}>
+      <Container>
+        <ContentWithPaddingXl>
+          <Column>
+            <HeaderContent>
+              {subheading && <Subheading>{subheading}</Subheading>}
+              <Heading>{heading}</Heading>
+              {description && <Description>{description}</Description>}
+            </HeaderContent>
+            <FAQSContainer>
+              {faqs.map((faq, index) => (
+                <FAQ
+                  key={index}
+                  onClick={() => {
+                    toggleQuestion(index);
+                  }}
+                  className="group"
+                >
+                  <Question>
+                    <QuestionText>{faq.question}</QuestionText>
+                    <QuestionToggleIcon
+                      variants={{
+                        collapsed: { rotate: 0 },
+                        open: { rotate: -180 }
+                      }}
+                      initial="collapsed"
+                      animate={activeQuestionIndex === index ? "open" : "collapsed"}
+                      transition={{ duration: 0.02, ease: [0.04, 0.62, 0.23, 0.98] }}
+                    >
+                      <ChevronDownIcon />
+                    </QuestionToggleIcon>
+                  </Question>
+                  <Answer
                     variants={{
-                      collapsed: { rotate: 0 },
-                      open: { rotate: -180 }
+                      open: { opacity: 1, height: "auto", marginTop: "16px" },
+                      collapsed: { opacity: 0, height: 0, marginTop: "0px" }
                     }}
                     initial="collapsed"
                     animate={activeQuestionIndex === index ? "open" : "collapsed"}
-                    transition={{ duration: 0.02, ease: [0.04, 0.62, 0.23, 0.98] }}
+                    transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
                   >
-                    <ChevronDownIcon />
-                  </QuestionToggleIcon>
-                </Question>
-                <Answer
-                  variants={{
-                    open: { opacity: 1, height: "auto", marginTop: "16px" },
-                    collapsed: { opacity: 0, height: 0, marginTop: "0px" }
-                  }}
-                  initial="collapsed"
-                  animate={activeQuestionIndex === index ? "open" : "collapsed"}
-                  transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
-                >
-                  {faq.answer}
-                </Answer>
-              </FAQ>
-            ))}
-          </FAQSContainer>
-        </Column>
-      </ContentWithPaddingXl>
-      <DecoratorBlob1/>
-      <DecoratorBlob2 />
-    </Container>
+                    {faq.answer}
+                  </Answer>
+                </FAQ>
+              ))}
+            </FAQSContainer>
+          </Column>
+        </ContentWithPaddingXl>
+        <DecoratorBlob1 />
+        <DecoratorBlob2 />
+      </Container>
     </PrimaryBackgroundContainer>
   );
 };

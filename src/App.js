@@ -1,7 +1,7 @@
 import "tailwindcss/dist/base.css";
 import "styles/globalStyles.css";
 import React from "react";
-import Home from "./home.js";
+import Home from "pages/Home.js";
 import Login from "pages/Login.js"
 import SignUp from "pages/Signup.js"
 import VerifyPhone from "pages/VerifyEmailnPhone.js"

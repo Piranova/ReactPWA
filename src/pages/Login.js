@@ -30,6 +30,8 @@ const IllustrationImage = styled.div`
   ${tw`m-12 xl:m-16 w-full max-w-sm bg-contain bg-center bg-no-repeat`}
 `;
 
+const Link = tw.p`mt-6 text-xs text-gray-600 text-center`
+
 export default ({
   illustrationImageSrc = illustration,
   headingText = "Sign In To APP NAME",
@@ -53,17 +55,17 @@ export default ({
                 <span className="text">{submitButtonText}</span>
               </SubmitButton>
             </Form>
-            <p tw="mt-6 text-xs text-gray-600 text-center">
+            <Link>
               <a href={forgotPasswordUrl} tw="border-b border-gray-500 border-dotted">
                 Forgot Password ?
-            </a>
-            </p>
-            <p tw="mt-8 text-sm text-gray-600 text-center">
+              </a>
+            </Link>
+            <Link>
               Dont have an account?{" "}
               <a href={signupUrl} tw="border-b border-gray-500 border-dotted">
                 Sign Up
-            </a>
-            </p>
+              </a>
+            </Link>
           </FormContainer>
         </MainContent>
         <IllustrationContainer>

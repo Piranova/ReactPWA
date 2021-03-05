@@ -10,6 +10,7 @@ import "react-phone-number-input/style.css";
 import "react-step-progress-bar/styles.css";
 
 import { ProgressBar, Step } from "react-step-progress-bar";
+import PhoneInput from 'react-phone-number-input'
 import { useHistory } from "react-router-dom";
 
 const Content = tw.div`max-w-screen-xl m-0 sm:mx-20 sm:my-16 bg-white text-gray-900 shadow sm:rounded-lg flex justify-center flex-1`;
@@ -20,6 +21,8 @@ const FormContainer = tw.div`w-full flex-1 mt-8`;
 
 const Form = tw.form`mx-auto max-w-xs`;
 const Input = tw.input`w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5 first:mt-0`;
+const PhoneDiv = tw.div`w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5 first:mt-0`;
+
 const Select = tw.select`w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5 first:mt-0`;
 const SubmitButton = styled.button`
   ${tw`mt-5 tracking-wide font-semibold bg-primary-500 text-gray-100 w-full py-4 rounded-lg hover:bg-primary-900 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none`}
@@ -92,6 +95,12 @@ const SignUpForm = () => {
                   </Select>
                 </label>
                 <Input type="email" placeholder="Email" />
+                <PhoneDiv>
+                  <PhoneInput
+                    country="US"
+                    value={phoneNumberValue}
+                    onChange={setPhoneNumberValue} />
+                </PhoneDiv>
                 <SubmitButton type="submit" onClick={() => { nextPath('/verify-phone') }}>
                   <SubmitButtonIcon className="icon" />
                   <span className="text">{submitButtonText}</span>

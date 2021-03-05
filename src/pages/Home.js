@@ -10,6 +10,7 @@ import FAQ from "components/faqs/SingleCol.js";
 import Footer from "components/footers/MiniCenteredFooter.js";
 import GotoTop from "components/footers/GotoTop";
 
+
 const Home = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const handleScroll = () => {

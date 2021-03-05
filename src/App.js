@@ -6,6 +6,7 @@ import Login from "pages/Login.js"
 import SignUp from "pages/Signup.js"
 import VerifyPhone from "pages/VerifyEmailnPhone.js"
 import FillDetails from "pages/FillDetails.js"
+import ContactUs from "pages/ContactUs";
 /*
  * This is the entry point component of this project. You can change the below exported default App component to any of
  * the prebuilt landing page components by uncommenting their import and export lines respectively.
@@ -36,6 +37,9 @@ export default function App() {
         </Route>
         <Route path="/fill-details">
           <FillDetails />
+        </Route>
+        <Route path="/contact-us">
+          <ContactUs />
         </Route>
       </Switch>
     </Router>

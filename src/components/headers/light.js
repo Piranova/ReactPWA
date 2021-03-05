@@ -79,7 +79,7 @@ export default ({ roundedHeaderButton = false, logoLink, links, className, colla
       <NavLink href="#">United States</NavLink>
       <NavLink href="#">Features</NavLink>
       <NavLink href="#">Pricing</NavLink>
-      <NavLink href="#">Contact Us</NavLink>
+      <NavLink href="/contact-us">Contact Us</NavLink>
       <NavLink href="/login">Login</NavLink>
       <PrimaryLink href="#">Signup</PrimaryLink>
     </NavLinks>

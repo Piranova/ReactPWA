@@ -8,7 +8,7 @@ import "react-step-progress-bar/styles.css";
 import { ProgressBar, Step } from "react-step-progress-bar";
 import JotformEmbed from 'react-jotform-embed';
 
-const Content = tw.div`max-w-screen-xl m-0 sm:mx-20 sm:my-16 bg-white text-gray-900 shadow sm:rounded-lg flex justify-center flex-1`;
+const Content = tw.div`max-w-screen-xl m-0 sm:mx-20 sm:my-16 bg-white text-gray-900 sm:rounded-lg flex justify-center flex-1`;
 const MainContainer = tw.div`w-full`;
 const Heading = tw.h1`text-2xl xl:text-3xl font-extrabold text-center`;
 const FormContainer = tw.div`w-full flex-1 mt-8`;

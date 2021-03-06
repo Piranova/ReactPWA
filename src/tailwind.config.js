@@ -261,7 +261,7 @@ module.exports = {
       default: '1',
     },
     fontFamily: {
-      display: ['Inter', 'system-ui'],
+      display: ['Poppins', 'system-ui'],
       sans: [
         'system-ui',
         '-apple-system',

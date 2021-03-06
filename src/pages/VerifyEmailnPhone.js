@@ -51,16 +51,10 @@ const headingText = "Verify Phone number";
 const VerifyPhone = () => {
 
   const history = useHistory();
-  const handleAccountTypeChange = (event) => {
-    console.log("Account type selected : ", event.target.value);
-  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
-  }
-
-  const handlePhoneNumberChange = (event) => {
-    console.log("Phone number changed to : " + event);
+    history.push('/fill-details')
   }
 
   return (
@@ -73,11 +67,11 @@ const VerifyPhone = () => {
             <FormContainer>
               <Form>
                 <Input type="text" placeholder="Enter otp" />
-                <VerifyButton onClick={() => history.push('/fill-details')}>
+                <VerifyButton onClick={handleSubmit}>
                   <VerifyButtonIcon className="icon" />
                   <span className="text">{VerifyButtonText}</span>
                 </VerifyButton>
-                <VerifyButton >
+                <VerifyButton>
                   <ResendButtonIcon className="icon" />
                   <span className="text">{ResendButtonText}</span>
                 </VerifyButton>
@@ -121,9 +115,9 @@ const VerifyPhone = () => {
         filledBackground="linear-gradient(to right, #fefb72, #f0bb31)"
       >
         <Step transition="scale">
-          {({ accomplished }) => (
+          {() => (
             <img
-              style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
+              style={{ filter: `grayscale(${0}%)` }}
               width="30"
               src={StepImage}
               alt=""
@@ -131,9 +125,9 @@ const VerifyPhone = () => {
           )}
         </Step>
         <Step transition="scale">
-          {({ accomplished }) => (
+          {() => (
             <img
-              style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
+              style={{ filter: `grayscale(${80}%)` }}
               width="30"
               src={StepImage}
               alt=""
@@ -141,9 +135,9 @@ const VerifyPhone = () => {
           )}
         </Step>
         <Step transition="scale">
-          {({ accomplished }) => (
+          {() => (
             <img
-              style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
+              style={{ filter: `grayscale(${80}%)` }}
               width="30"
               src={StepImage}
               alt=""

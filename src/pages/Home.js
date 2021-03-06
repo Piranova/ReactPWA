@@ -33,7 +33,9 @@ const Home = () => {
       <Element name="pricing">
         <Pricing />
       </Element>
-      <Pricing />
+      <Element name="contact-us">
+        <Pricing />
+      </Element>
       <FAQ />
       <Footer />
       {scrollPosition > 200 && <GotoTop />}

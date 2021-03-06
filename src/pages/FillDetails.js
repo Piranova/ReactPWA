@@ -53,9 +53,9 @@ class FillDetails extends React.Component {
           filledBackground="linear-gradient(to right, #fefb72, #f0bb31)"
         >
           <Step transition="scale">
-            {({ accomplished }) => (
+            {() => (
               <img
-                style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
+                style={{ filter: `grayscale(${0}%)` }}
                 width="30"
                 src={StepImage}
                 alt=""
@@ -63,9 +63,9 @@ class FillDetails extends React.Component {
             )}
           </Step>
           <Step transition="scale">
-            {({ accomplished }) => (
+            {() => (
               <img
-                style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
+                style={{ filter: `grayscale(${0}%)` }}
                 width="30"
                 src={StepImage}
                 alt=""
@@ -73,9 +73,9 @@ class FillDetails extends React.Component {
             )}
           </Step>
           <Step transition="scale">
-            {({ accomplished }) => (
+            {() => (
               <img
-                style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
+                style={{ filter: `grayscale(${80}%)` }}
                 width="30"
                 src={StepImage}
                 alt=""

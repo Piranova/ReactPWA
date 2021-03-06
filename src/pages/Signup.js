@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AnimationRevealPage from "helpers/AnimationRevealPage.js";
 import tw from "twin.macro";
 import styled from "styled-components";
@@ -11,7 +11,7 @@ import "react-step-progress-bar/styles.css";
 
 import { ProgressBar, Step } from "react-step-progress-bar";
 import PhoneInput from 'react-phone-number-input'
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
 const Content = tw.div`max-w-screen-xl m-0 sm:mx-20 sm:my-16 bg-white text-gray-900 shadow sm:rounded-lg flex justify-center flex-1`;
 const MainContainer = tw.div`lg:w-1/2 xl:w-5/12 p-6 sm:p-12`;
@@ -21,7 +21,11 @@ const FormContainer = tw.div`w-full flex-1 mt-8`;
 
 const Form = tw.form`mx-auto max-w-xs`;
 const Input = tw.input`w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5 first:mt-0`;
-const PhoneDiv = tw.div`w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5 first:mt-0`;
+const PhoneDiv = styled.div`
+  ${tw`w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm mt-5`}
+  input {
+    ${tw`focus:outline-none`}
+  }`;
 
 const Select = tw.select`w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5 first:mt-0`;
 const SubmitButton = styled.button`
@@ -50,9 +54,15 @@ const headingText = "Sign Up For APP NAME";
 const SignUpForm = () => {
 
   const history = useHistory();
+  const location = useLocation();
 
   const [accountTypeValue, setAccountTypeValue] = useState('Please select your account type');
+  const [emailValue, setEmailValue] = useState('');
   const [phoneNumberValue, setPhoneNumberValue] = useState('Enter phone number');
+
+  useEffect(() => {
+    if (location.state.email) setEmailValue(location.state.email);
+  }, [])
 
   const handleAccountTypeChange = (event) => {
     setAccountTypeValue(event.target.value);
@@ -61,6 +71,7 @@ const SignUpForm = () => {
 
   const handleSubmit = (event) => {
     console.log("submit clicked : ", event);
+    nextPath('/verify-phone')
   }
 
   const nextPath = (path) => {
@@ -68,9 +79,9 @@ const SignUpForm = () => {
     history.push(path);
   }
 
-  const handlePhoneNumberChange = (event) => {
-    setPhoneNumberValue(event.target.value);
-    console.log("Phone number changed to : " + event);
+  const handlePhoneNumberChange = (value) => {
+    setPhoneNumberValue(value);
+    console.log("Phone number changed to : " + value);
   }
 
   return (
@@ -94,14 +105,14 @@ const SignUpForm = () => {
                     <option value="guest">Guest</option>
                   </Select>
                 </label>
-                <Input type="email" placeholder="Email" />
+                <Input placeholder="Email" value={emailValue} onChange={(ev) => { setEmailValue(ev.target.value) }} />
                 <PhoneDiv>
                   <PhoneInput
                     country="US"
                     value={phoneNumberValue}
-                    onChange={setPhoneNumberValue} />
+                    onChange={handlePhoneNumberChange} />
                 </PhoneDiv>
-                <SubmitButton type="submit" onClick={() => { nextPath('/verify-phone') }}>
+                <SubmitButton onClick={handleSubmit}>
                   <SubmitButtonIcon className="icon" />
                   <span className="text">{submitButtonText}</span>
                 </SubmitButton>
@@ -144,9 +155,9 @@ const SignUpForm = () => {
         filledBackground="linear-gradient(to right, #fefb72, #f0bb31)"
       >
         <Step transition="scale">
-          {({ accomplished }) => (
+          {() => (
             <img
-              style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
+              style={{ filter: `grayscale(${80}%)` }}
               width="30"
               src={StepImage}
               alt=""
@@ -154,18 +165,18 @@ const SignUpForm = () => {
           )}
         </Step>
         <Step transition="scale">
-          {({ accomplished }) => (
+          {() => (
             <img
-              style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
+              style={{ filter: `grayscale(${80}%)` }}
               width="30"
               src={StepImage}
               alt="" />
           )}
         </Step>
         <Step transition="scale">
-          {({ accomplished }) => (
+          {() => (
             <img
-              style={{ filter: `grayscale(${accomplished ? 0 : 80}%)` }}
+              style={{ filter: `grayscale(${0}%)` }}
               width="30"
               src={StepImage}
               alt=""

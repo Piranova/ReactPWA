@@ -15,3 +15,15 @@
     transform: scale(0);
     /* transform: translateY(-150%); */
 }
+
+
+/* Custom Flag Start */
+.customCountry .innerCountry::before {
+    /* background-image: 'images'; */
+    background-color: red;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 0px;
+}
+/* Custom Flag End */

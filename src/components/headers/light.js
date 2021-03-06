@@ -90,7 +90,7 @@ export default ({ roundedHeaderButton = false, logoLink, links, className, colla
           {links}
         </MobileNavLinks>
         <NavToggle onClick={toggleNavbar} className={showNavLinks ? "open" : "closed"}>
-          {showNavLinks ? <CloseIcon tw="w-6 h-6" /> : <MenuIcon tw="w-6 h-6" />}
+          {showNavLinks ? <CloseIcon tw="w-6 h-6 text-black" /> : <MenuIcon tw="w-6 h-6" />}
         </NavToggle>
       </MobileNavLinksContainer>
     </Header>

@@ -31,7 +31,7 @@ const NavLink = tw(Link)`lg:text-gray-100 lg:hocus:text-gray-300 lg:hocus:border
   font-semibold tracking-wide transition duration-300
   pb-1 hover:border-primary-500 hocus:text-primary-500`;
 const LogoLink = tw(LogoLinkBase)`text-gray-100 hocus:text-gray-300`;
-const PrimaryLink = tw(PrimaryLinkBase)`shadow-raised lg:bg-primary-400 lg:hocus:bg-primary-500`;
+const PrimaryLink = tw(PrimaryLinkBase)`shadow-raised lg:bg-custom-light lg:hover:bg-custom-dark`;
 const Container = tw(ContainerBase)``;
 const Row = tw.div`flex items-center flex-col lg:flex-row`;
 const TextColumn = tw.div`text-center w-full mb-4 lg:text-left lg:w-1/2`;
@@ -112,7 +112,7 @@ export default ({
     ${tw`sm:pr-48 pl-8 py-4 sm:py-5 rounded-full border-2 w-full font-medium text-black focus:outline-none transition duration-300  focus:border-primary-500 hover:border-gray-500`}
   }
   button {
-    ${tw`w-full sm:absolute right-0 top-0 bottom-0 bg-primary-300 text-gray-100 font-bold mr-2 my-4 sm:my-2 rounded-full py-4 flex items-center justify-center sm:w-40 sm:leading-none focus:outline-none hover:bg-primary-600 transition duration-300`}
+    ${tw`w-full sm:absolute right-0 top-0 bottom-0 bg-custom-light text-gray-100 font-bold mr-2 my-4 sm:my-2 rounded-full py-4 flex items-center justify-center sm:w-40 sm:leading-none focus:outline-none hover:bg-custom-dark transition duration-300`}
   }
 `;
   return (

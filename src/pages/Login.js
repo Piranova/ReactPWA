@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import AnimationRevealPage from "helpers/AnimationRevealPage.js";
 import tw from "twin.macro";
 import styled from "styled-components";
@@ -39,7 +39,9 @@ export default ({
   SubmitButtonIcon = LoginIcon,
   forgotPasswordUrl = "#",
   signupUrl = "/signup",
-}) => (
+}) => {
+  const [email, setEmail] = useState('');
+  return(
   <AnimationRevealPage disabled>
     <Header />
     <Container>
@@ -48,7 +50,7 @@ export default ({
           <Heading>{headingText}</Heading>
           <FormContainer>
             <Form>
-              <Input type="email" placeholder="Email" />
+              <Input type="email" placeholder="Email" value={email} onChange={(ev)=>{setEmail(ev.target.value)}}/>
               <Input type="password" placeholder="Password" />
               <SubmitButton type="submit" >
                 <SubmitButtonIcon className="icon" />
@@ -75,3 +77,4 @@ export default ({
     </Container>
   </AnimationRevealPage>
 );
+}

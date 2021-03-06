@@ -43,6 +43,15 @@ const MenuContainer = tw.div`relative inline-block mx-6 my-2 lg:my-0 pb-1`;
 const MenuTrigger = tw.button`focus:outline-none`;
 const MenuTriggerSpan = tw.span`focus:outline-none font-semibold text-lg lg:text-sm`;
 
+const Actions = styled.div`
+  ${tw`relative max-w-md text-center mx-auto lg:mx-0`}
+  input {
+    ${tw`sm:pr-48 pl-8 py-4 sm:py-5 rounded-full border-2 w-full font-medium text-black focus:outline-none transition duration-300  focus:border-primary-500 hover:border-gray-500`}
+  }
+  button {
+    ${tw`w-full sm:absolute right-0 top-0 bottom-0 bg-custom-light text-gray-100 font-bold mr-2 my-4 sm:my-2 rounded-full py-4 flex items-center justify-center sm:w-40 sm:leading-none focus:outline-none hover:bg-custom-dark transition duration-300`}
+  }
+`;
 export default ({
   heading = "High Performant Servers tailored to your needs",
   description = "Our cloud provisions the best servers, with fast SSD, powerful Xeon Processors, whenever you need it. Oh, and we have 99.9% SLA",
@@ -73,7 +82,7 @@ export default ({
         >
           <ul>
             <li>
-              <a onClick={() => {setCountry('United States') }}>
+              <a onClick={() => { setCountry('United States') }}>
                 <img style={{ width: '20px', display: 'inline-block', marginRight: '10px' }} src={USFLAG} />United States</a>
             </li>
             <li>
@@ -106,15 +115,7 @@ export default ({
       <PrimaryLink href="/signup">Signup</PrimaryLink>
     </NavLinks>
   ];
-  const Actions = styled.div`
-  ${tw`relative max-w-md text-center mx-auto lg:mx-0`}
-  input {
-    ${tw`sm:pr-48 pl-8 py-4 sm:py-5 rounded-full border-2 w-full font-medium text-black focus:outline-none transition duration-300  focus:border-primary-500 hover:border-gray-500`}
-  }
-  button {
-    ${tw`w-full sm:absolute right-0 top-0 bottom-0 bg-custom-light text-gray-100 font-bold mr-2 my-4 sm:my-2 rounded-full py-4 flex items-center justify-center sm:w-40 sm:leading-none focus:outline-none hover:bg-custom-dark transition duration-300`}
-  }
-`;
+
   return (
     <PrimaryBackgroundContainer css={gradientCss}>
       <Content2Xl>
@@ -128,7 +129,7 @@ export default ({
                 <br /><br />
                 <Actions>
                   <input placeholder="Your E-mail Address" onChange={(ev) => { setEmailValue(ev.target.value) }} value={emailValue} />
-                  <button onClick={() => { history.push({ pathname: '/signup', state: { email: emailValue } }) }}>Get Started</button>
+                  <button type="submit" onClick={() => { history.push({ pathname: '/signup', state: { email: emailValue } }) }}>Get Started</button>
                 </Actions>
               </TextColumn>
               <VideoColumn>

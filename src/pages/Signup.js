@@ -61,7 +61,7 @@ const SignUpForm = () => {
   const [phoneNumberValue, setPhoneNumberValue] = useState('Enter phone number');
 
   useEffect(() => {
-    if (location.state.email) setEmailValue(location.state.email);
+    if (location.state && location.state.email) setEmailValue(location.state.email);
   }, [])
 
   const handleAccountTypeChange = (event) => {
